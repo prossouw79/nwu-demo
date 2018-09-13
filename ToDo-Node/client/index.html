@@ -15,15 +15,41 @@
 <body>
     <div class="container">
         <div ng-app="todolist" ng-controller="todoCtrl">
-            <strong>Enter name</strong>
-            <input type="text" ng-model="name">
-
-            <strong>Enter surname</strong>
-            <input type="text" ng-model="surname">
-
-            <strong>Result</strong>
-            <p>
-                {{name}} {{surname}}
-            </p>
+            <strong>Person</strong>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Surname
+                        </th>
+                        <th>
+                            Age
+                        </th>
+                        <th>
+                            Dogs
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="person in people">
+                        <td>
+                            {{person.name}}
+                        </td>
+                        <td>
+                            {{person.surname}}
+                        </td>
+                        <td>
+                            {{person.age}}
+                        </td>
+                        <td>
+                            <ul>
+                                <li ng-repeat="dog in person.dogs">{{dog.name}} ({{dog.breed}})</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-       

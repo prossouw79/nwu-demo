@@ -13,16 +13,35 @@ app.get('/api/getPerson', function (req, res) {
         name: "Pieter",
         surname: "Rossouw",
         age: 27,
-        dogs : []
+        dogs: []
     }
-var dog1 = {
+    var dog1 = {
         name: "Zoey",
         breed: "Something..."
     }
 
-    person.dogs.push(dog1);
+    var dog2 = {
+        name: "Kolisi",
+        breed: "Dachshund"
+    }
 
-  res.send(JSON.stringify(person));
+    person.dogs.push(dog1);
+    person.dogs.push(dog2);
+
+    var person2 = {
+        name: "Henry",
+        surname: "Foulds",
+        age: 21,
+        dogs: []
+    }
+    var dog3 = {
+        name: "Kai",
+        breed: "Alaskan Malamut"
+    }
+
+    person2.dogs.push(dog3);
+
+    res.send(JSON.stringify([person,person2]));
 })
 
 app.listen(3000)
