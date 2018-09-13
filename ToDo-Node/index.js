@@ -1,8 +1,10 @@
 var express = require('express')
 var app = express();
 
+app.use(express.static(__dirname + '/client'));
+
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/client/index.html');
+    res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
 
 app.get('/api/getPerson', function (req, res) {
@@ -13,7 +15,7 @@ app.get('/api/getPerson', function (req, res) {
         age: 27,
         dogs : []
     }
-    var dog1 = {
+var dog1 = {
         name: "Zoey",
         breed: "Something..."
     }

@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/angularjs.min.js"></script>
+    <script src="./lib/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./lib/fontawesome.css">
+    <script src="./lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap.min.css">
+
+    <script src="./app.js"></script>
+</head>
+
 <body>
+    <div class="container">
+        <div ng-app="todolist" ng-controller="todoCtrl">
+            <strong>Enter name</strong>
+            <input type="text" ng-model="name">
 
-    <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
+            <strong>Enter surname</strong>
+            <input type="text" ng-model="surname">
 
-</body>
-
-</html>
+            <strong>Result</strong>
+            <p>
+                {{name}} {{surname}}
+            </p>
+        </div>
+       
